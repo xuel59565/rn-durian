@@ -32,6 +32,14 @@
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) needs access to your Camera.</string>
+
+	<!-- optionally, if you want to record audio: -->
+	<key>NSMicrophoneUsageDescription</key>
+	<string>$(PRODUCT_NAME) needs access to your Microphone.</string>
+
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
