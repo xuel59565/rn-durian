@@ -11,9 +11,9 @@ export default class HomeStack extends Component {
 
   render() {
     return (
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Homes">
       <Stack.Screen
-        name="Home"
+        name="Homes"
         component={HomeScreen}
         options={{
           title: '首页',

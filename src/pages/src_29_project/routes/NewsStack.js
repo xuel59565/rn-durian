@@ -9,7 +9,7 @@ export default function NewsStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="News"
+        name="Newss"
         component={NewsScreen}
         options={{
           title: '新闻', //自定义标题栏的标题

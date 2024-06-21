@@ -9,7 +9,7 @@ export default function UserStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="User"
+        name="Users"
         component={UserScreen}
         options={{
           title: '用戶', //自定义标题栏的标题
