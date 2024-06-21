@@ -18,13 +18,15 @@ export default class HomeStack extends Component {
         options={{
           title: '首页',
           headerStyle: {
-            backgroundColor: '#455127',
+            backgroundColor: '#697767',
+            elevation: 0, //删除android上的阴影
+            shadowOpacity: 0, //删除IOS上的阴影
           },
-          headerTintColor: '#f2ecd3',
+          headerTintColor: '#e9dfb8',
           headerRight: () => {
             return (
               <TouchableOpacity onPress={()=> this.props.navigation.navigate('TackPicture')}>
-                <Text style={{fontSize: 18, color: '#f2ecd3', marginRight: 10}}>
+                <Text style={{fontSize: 18, color: '#e9dfb8', marginRight: 10}}>
                   拍照
                 </Text>
               </TouchableOpacity>
@@ -38,7 +40,7 @@ export default class HomeStack extends Component {
         options={{
           title: '拍照',
           headerStyle: {
-            backgroundColor: '#455127',
+            backgroundColor: '#505f59',
           },
           headerTintColor: '#f2ecd3',
         }}
