@@ -13,6 +13,14 @@
       "platform": "ios"
     },
     {
+      "command": "yarn android",
+      "name": "yarn android",
+      "request": "launch",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}",
+      "platform": "android"
+    },
+    {
       "name": "Debug Android",
       "cwd": "${workspaceFolder}",
       "type": "reactnative",

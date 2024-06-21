@@ -1,31 +1,29 @@
-import {StyleSheet, Text, View, TouchableOpacity, Alert} from 'react-native';
-import React from 'react';
+import {StyleSheet, Text,  TouchableOpacity, Alert} from 'react-native';
+import React, {Component} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {useNavigation} from '@react-navigation/native';
 
 import HomeScreen from '../screens/Home';
-import CameraScreen from '../screens/Home/Camera';
+import TakePictureScreen from '../screens/Home/TakePicture';
+
 
 const Stack = createStackNavigator();
+export default class HomeStack extends Component {
 
-
-export default function HomeStack() {
-  const navigation = useNavigation();
-  return (
-    <Stack.Navigator initialRouteName="Home">
+  render() {
+    return (
+      <Stack.Navigator initialRouteName="Home">
       <Stack.Screen
         name="Home"
         component={HomeScreen}
         options={{
           title: '首页',
           headerStyle: {
-
             backgroundColor: '#455127',
           },
           headerTintColor: '#f2ecd3',
           headerRight: () => {
             return (
-              <TouchableOpacity onPress={() => navigation.navigate('Camera')}>
+              <TouchableOpacity onPress={()=> this.props.navigation.navigate('TackPicture')}>
                 <Text style={{fontSize: 18, color: '#f2ecd3', marginRight: 10}}>
                   拍照
                 </Text>
@@ -35,10 +33,10 @@ export default function HomeStack() {
         }}
       />
       <Stack.Screen
-        name="Camera"
-        component={CameraScreen}
+        name="TackPicture"
+        component={TakePictureScreen}
         options={{
-          title: '摄像机',
+          title: '拍照',
           headerStyle: {
             backgroundColor: '#455127',
           },
@@ -46,7 +44,8 @@ export default function HomeStack() {
         }}
       />
     </Stack.Navigator>
-  );
+    )
+  }
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({})
