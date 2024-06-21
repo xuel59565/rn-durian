@@ -8,31 +8,33 @@ import {
   Alert,
   Image,
 } from 'react-native';
-import React from 'react';
+import React, { Component } from 'react'
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Swiper from 'react-native-swiper';
 import Geolocation from '@react-native-community/geolocation';
-
-export default function Index() {
-
-// componentDidMount = () => {
-//   Geolocation.getCurrentPosition(
-//     info => {
-//       console.log(info);
-//       // 获取地理位置成功后将其保存下来
-//       AsyncStorage.setItem('coords', JSON.stringify(info.coords));
-//     },
-//     error => Alert.alert('报错', JSON.stringify(error)),
-//     {
-//       enableHighAccuracy: true,
-//       timeout: 20000,
-//     },
-//   );
-// }
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-  return (
+export default class index extends Component {
+
+  componentDidMount = () => {
+    Geolocation.getCurrentPosition(
+      info => {
+        console.log('获取地理位置',info);
+        // 获取地理位置成功后将其保存下来
+        AsyncStorage.setItem('coords', JSON.stringify(info.coords));
+      },
+      error => Alert.alert('获取地理位置报错', JSON.stringify(error)),
+      {
+        enableHighAccuracy: true,
+        timeout: 20000,
+      },
+    );
+  }
+
+  render() {
+    return (
     <View>
       <ScrollView>
         <View style={[styles.container]}>
@@ -95,6 +97,7 @@ export default function Index() {
       </ScrollView>
     </View>
   );
+  }
 }
 
 const styles = StyleSheet.create({
