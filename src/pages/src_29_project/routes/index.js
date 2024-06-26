@@ -1,6 +1,6 @@
-import {StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from './HomeStack';
@@ -9,12 +9,12 @@ import NewsScreen from './NewsStack';
 
 const Tab = createBottomTabNavigator();
 
-export default function index() {
+export default function Index() {
   return (
     <Tab.Navigator
-      initialRouteName="News"
-      screenOptions={({route}) => ({
-        tabBarIcon: ({focused, color, size}) => {
+      initialRouteName="User"
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home-outline';
@@ -26,23 +26,25 @@ export default function index() {
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: '#f19c5d',
-        inactiveTintColoe: 'gray',
+        tabBarInactiveTintColor: 'gray',
         headerShown: false,
-      })}>
+      })}
+    >
       <Tab.Screen
         name="Home"
         component={HomeScreen}
-        options={{title: '首页'}}
+        options={{ title: '首页' }}
       />
       <Tab.Screen
         name="News"
         component={NewsScreen}
-        options={{title: '新闻'}}
+        options={{ title: '新闻' }}
       />
       <Tab.Screen
         name="User"
         component={UserScreen}
-        options={{title: '用户'}}
+        options={{ title: '用户' ,
+      }}
       />
     </Tab.Navigator>
   );

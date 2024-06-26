@@ -29,6 +29,11 @@ export default function NewsStack() {
           headerStyle: {
             backgroundColor: '#fff', // 自定义标题栏背景颜色
           },
+          headerTitleStyle: {
+            color: '#000',
+            shadowOpacity: 0, //删除IOS上的阴影
+            height:0
+          },
         }}
       />
     </Stack.Navigator>
