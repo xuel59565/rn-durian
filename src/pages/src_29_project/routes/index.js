@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 export default function index() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="News"
       screenOptions={({route}) => ({
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
@@ -29,9 +29,21 @@ export default function index() {
         inactiveTintColoe: 'gray',
         headerShown: false,
       })}>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="News" component={NewsScreen} />
-      <Tab.Screen name="User" component={UserScreen} />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{title: '首页'}}
+      />
+      <Tab.Screen
+        name="News"
+        component={NewsScreen}
+        options={{title: '新闻'}}
+      />
+      <Tab.Screen
+        name="User"
+        component={UserScreen}
+        options={{title: '用户'}}
+      />
     </Tab.Navigator>
   );
 }

@@ -19,7 +19,6 @@ import { FlatList } from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
 import weatherIcons from '../../utils/weatherIcons';
 
-
 export default class Index extends Component {
   //构造函数
   constructor(){
@@ -176,6 +175,10 @@ export default class Index extends Component {
             />
           </Swiper>
           <View style={[styles.city]}>
+          <Ionicons
+                  name="location"
+                  size={26}
+                  color={'#f19c5d'}></Ionicons>
             <Text style={[styles.cityText]}>
               {this.state.city.country} 
               {this.state.city.adm1}
@@ -226,6 +229,7 @@ export default class Index extends Component {
                         style={[styles.weatherIcon]}
                         source={weatherIcons[item.iconNight]}
                       />
+                     
                     </View>
                   </View>
                 </LinearGradient>
@@ -233,6 +237,7 @@ export default class Index extends Component {
             })}
           </View>
         </ScrollView>
+
       </View>
     );
   }
@@ -246,7 +251,7 @@ const styles = StyleSheet.create({
   itemBase: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#697767',
+    backgroundColor: '#f19c5d',
     height: 90,
     width: Dimensions.get('window').width / 4,
   },
@@ -284,11 +289,14 @@ const styles = StyleSheet.create({
   },
   city: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'start',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: 10,
   },
   cityText: {
     fontSize: 24,
-    marginHorizontal: 10,
+    marginHorizontal: 2,
   },
   indexContainer: {
     flex: 1,

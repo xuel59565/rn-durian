@@ -11,14 +11,14 @@ export default class HomeStack extends Component {
 
   render() {
     return (
-      <Stack.Navigator initialRouteName="Homes">
+      <Stack.Navigator >
       <Stack.Screen
         name="Homes"
         component={HomeScreen}
         options={{
           title: '首页',
           headerStyle: {
-            backgroundColor: '#697767',
+            backgroundColor: '#f19c5d',
             elevation: 0, //删除android上的阴影
             shadowOpacity: 0, //删除IOS上的阴影
           },

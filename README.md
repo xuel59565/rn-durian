@@ -1,5 +1,16 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
+正在为以下对象生成 2,048 位RSA密钥对和自签名证书 (SHA256withRSA) (有效期为 10,000 天):
+         CN=lilyliu, OU=Unknown, O=Unknown, L=深圳, ST=廣東省, C=cn
+         
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore app-release-unsigned.apk my-key-alias
+Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+
+         正在为以下对象生成 2,048 位RSA密钥对和自签名证书 (SHA256withRSA) (有效期为 10,000 天):
+         CN=lilyliu, OU=Unknown, O=Unknown, L=深圳, ST=廣東省, C=cn
+[正在存储my-release-key.keystore]
+打包的密钥好像是六个1
+
 # Getting Started
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.

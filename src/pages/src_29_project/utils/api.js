@@ -1,18 +1,26 @@
-// 获取新闻列表
+
+
+  // 获取新闻列表
 export const getNewsList = async type => {
-    const key = 'ddd5b2d286a698254b9bfbdef925f322';
-    const url = `http://v.juhe.cn/toutiao/index?key=${key}&type={type}`;
-    try {
-      const response = await (await fetch(url)).json();
-      if (response.error_code === 0) {
-        return response.result.data;
-      } else {
-        return [];
-      }
-    } catch (error) {
-      console.log('Fetch Error', error);
+  const key = 'ddd5b2d286a698254b9bfbdef925f322';
+  const url = `https://v.juhe.cn/toutiao/index?key=${key}&type=${type}`;
+  // const url = `https://v.juhe.cn/toutiao/index?key=ddd5b2d286a698254b9bfbdef925f322&type=top`;
+  const response = await (await fetch(url)).json();
+
+  console.log('结果：',response.result.data)
+  try {
+    const response = await (await fetch(url)).json();
+
+    console.log('结果：',response.result.data)
+    if (response.error_code === 0) {
+      return response.result.data;
+    } else {
+      return [];
     }
-  };
+  } catch (error) {
+    console.log('发生错误：', error);
+  }
+};
   
   //获取城市信息
   export const getCityInfo = async coords => {
