@@ -37,7 +37,10 @@ export default class UserStack extends Component {
         <Stack.Screen name="Login" component={LoginScreen} 
           options={{title: '登錄'}}
           />  
-           <Stack.Screen name="Registr" component={RegistrScreen} />
+           <Stack.Screen name="Registr" component={RegistrScreen} 
+          options={{title: '註冊'}}
+           
+           />
         {/* <Stack.Screen name="Counter" component={CounterScreen} /> */}
       
       </Stack.Navigator>
